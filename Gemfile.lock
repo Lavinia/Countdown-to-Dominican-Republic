@@ -3,6 +3,7 @@ GEM
   specs:
     addressable (2.3.2)
     excon (0.16.4)
+    haml (3.1.7)
     heroku (2.32.6)
       heroku-api (~> 0.3.5)
       launchy (>= 0.3.2)
@@ -34,6 +35,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  haml
   heroku
   sinatra
   yahoo_weatherman
