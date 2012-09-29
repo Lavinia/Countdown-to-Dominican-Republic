@@ -1,7 +1,9 @@
-source 'https://rubygems.org'
+source "https://rubygems.org"
 
-gem 'sinatra'
-gem 'heroku'
+gem "sinatra"
+gem "sinatra-contrib"
 
-gem 'haml'
-gem 'yahoo_weatherman'
+gem "heroku"
+
+gem "haml"
+gem "yahoo_weatherman"

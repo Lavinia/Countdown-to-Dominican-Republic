@@ -1,4 +1,6 @@
 require "sinatra"
+require "sinatra/reloader" if development?
+require "haml"
 require "yahoo_weatherman"
 
 ARUBA_WOEID = 23424736
