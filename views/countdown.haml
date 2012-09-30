@@ -1,0 +1,16 @@
+%html
+  %head
+    %title Countdown to Aruba
+    %link(rel="stylesheet" href="styles.css")
+  %body
+    #content
+      #departure
+        %h1== #{ @days_to_departure }
+        %h3 days to departure
+      #weather
+        %h4 Current weather
+        #weather-image
+          %img(src="#{@image}")
+          %span #{@temp} degrees celsius
+          %span.block== High: #{@forecast_high}, Low: #{@forecast_low}
+

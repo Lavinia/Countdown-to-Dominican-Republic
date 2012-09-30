@@ -1,0 +1,42 @@
+body {
+  background: red;
+}
+
+h1, h2, h3, h4 {
+  text-align: center;
+}
+
+#content {
+  background: silver;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50em
+}
+
+#departure {
+  text-align: center;
+}
+
+/* Weather */
+
+#weather {
+  margin-left: auto;
+  margin-right: auto;
+  width: 25em;
+}
+
+#weather-image {
+  display: block;
+  margin-right: auto;
+  margin-left: auto;
+  text-align: center;
+}
+
+img {
+  vertical-align: middle;
+}
+.block {
+  display: block;
+}
+
+
