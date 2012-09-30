@@ -1,13 +1,33 @@
 body {
-  background: red;
+  background: cyan;
+  font-family: sans-serif;
 }
 
 h1, h2, h3, h4 {
   text-align: center;
+  margin: 0;
+}
+
+h1 {
+  font-size: 144;
+}
+
+h2 {
+  font-size: 32;
+}
+
+h3 {
+  font-size: 20;
+  margin: 8px;
+}
+
+
+div {
+  margin: 0px;
+  padding: 0px;
 }
 
 #content {
-  background: silver;
   margin-left: auto;
   margin-right: auto;
   width: 50em
@@ -18,25 +38,46 @@ h1, h2, h3, h4 {
 }
 
 /* Weather */
-
 #weather {
+  background: rgb(240, 240, 240);
+  background: rgba(240, 240, 240, 0.8);
+  margin-top: 32px;
   margin-left: auto;
   margin-right: auto;
-  width: 25em;
+  padding: 16px;
+  width: 416px;
+  border-radius: 32px;
 }
 
 #weather-image {
   display: block;
-  margin-right: auto;
-  margin-left: auto;
+  margin-left: 43.75%;
   text-align: center;
 }
 
-img {
+#current-weather {
+  height: 56px;
+}
+
+#weather-image {
+  float: left;
+}
+
+#weather-image img {
+  height: 52px;
+  width: 52px;
   vertical-align: middle;
 }
-.block {
-  display: block;
+
+#weather-description {
+  margin-top: 6px;
+  margin-left: 8px;
+  height: 40px;
+  float: left;
+}
+
+#high-low {
+  text-align: center;
 }
 
 

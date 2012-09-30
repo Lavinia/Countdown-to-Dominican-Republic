@@ -16,6 +16,7 @@ get '/' do
   @image = weather.description_image.values.first
   @forecast_low = weather.forecasts.first['low']
   @forecast_high = weather.forecasts.first['high']
-  @temp = weather.condition['temp']
+  @current_temperature = weather.condition['temp']
+  @current_condition = weather.condition['text']
   haml :countdown
 end

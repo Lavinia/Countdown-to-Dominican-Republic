@@ -6,11 +6,15 @@
     #content
       #departure
         %h1== #{ @days_to_departure }
-        %h3 days to departure
+        %h2 days to departure
       #weather
-        %h4 Current weather
-        #weather-image
-          %img(src="#{@image}")
-          %span #{@temp} degrees celsius
-          %span.block== High: #{@forecast_high}, Low: #{@forecast_low}
+        %h3 Current weather on Aruba
+        #current-weather
+          #weather-image
+            %img(src="#{@image}")
+          #weather-description
+            #{@current_temperature}&deg;C
+            %br= @current_condition
+        #high-low== High: #{@forecast_high}&deg;C, Low: #{@forecast_low}&deg;C
+
 
