@@ -1,5 +1,7 @@
 body {
-  background: black;
+  margin: 0;
+  padding: 0;
+  background-image: url("images/sand.jpg");
   font-family: sans-serif;
 }
 
@@ -11,7 +13,7 @@ h1, h2, h3, h4 {
 h1 {
   color: rgb(224, 224, 192);
   text-shadow: black 0.1em 0.1em 0.1em;
-  font-size: 144;
+  font-size: 160;
 }
 
 h2 {
@@ -20,15 +22,13 @@ h2 {
   font-size: 32;
 }
 
-h3 {
-  font-size: 20;
-  margin: 8px;
+div {
+  margin: 0;
+  padding: 0;
 }
 
-
-div {
-  margin: 0px;
-  padding: 0px;
+a {
+  text-decoration: none;
 }
 
 #content {
@@ -37,7 +37,7 @@ div {
   margin-left: auto;
   margin-right: auto;
   width: 1024px;
-  height: 100%;
+  height: 685px;
 }
 
 #departure {
@@ -47,18 +47,24 @@ div {
 /* Weather */
 #weather {
   background: rgb(255, 255, 255);
-  background: rgba(255, 255, 255, 0.55);
+  background: rgba(255, 255, 255, 0.6);
   margin-top: 32px;
   margin-left: auto;
   margin-right: auto;
-  padding: 16px;
-  width: 416px;
-  border-radius: 32px;
+  padding: 16px 0px;
+  width: 1024px;
+  box-shadow: 0px 4px rgba(144, 144, 144, 0.5)
 }
+
+#weather h3 {
+  font-size: 20;
+  margin: 8px;
+}
+
 
 #weather-image {
   display: block;
-  margin-left: 43.75%;
+  margin-left: 486px;
   text-align: center;
 }
 
@@ -87,4 +93,20 @@ div {
   text-align: center;
 }
 
+/* Footer */
+#footer {
+  margin-top: 32px;
+  margin-left: auto;
+  margin-right: auto;
+  width: 480px;
+  color: rgb(96, 96, 96);
+  text-align: center;
+}
 
+#footer a, a:visited {
+  color: rgb(112, 112, 112);
+}
+
+#footer a:hover, a:active {
+  color: rgb(144, 144, 144);
+}
