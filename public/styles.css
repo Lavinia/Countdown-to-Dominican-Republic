@@ -1,5 +1,5 @@
 body {
-  background: cyan;
+  background: black;
   font-family: sans-serif;
 }
 
@@ -9,10 +9,14 @@ h1, h2, h3, h4 {
 }
 
 h1 {
+  color: rgb(224, 224, 192);
+  text-shadow: black 0.1em 0.1em 0.1em;
   font-size: 144;
 }
 
 h2 {
+  color: rgb(208, 192, 160);
+  text-shadow: black 0.1em 0.1em 0.1em;
   font-size: 32;
 }
 
@@ -28,9 +32,12 @@ div {
 }
 
 #content {
+  background-image: url("images/day.jpg");
+  background-repeat: no-repeat;
   margin-left: auto;
   margin-right: auto;
-  width: 50em
+  width: 1280px;
+  height: 100%;
 }
 
 #departure {
@@ -39,8 +46,8 @@ div {
 
 /* Weather */
 #weather {
-  background: rgb(240, 240, 240);
-  background: rgba(240, 240, 240, 0.8);
+  background: rgb(255, 255, 255);
+  background: rgba(255, 255, 255, 0.55);
   margin-top: 32px;
   margin-left: auto;
   margin-right: auto;
