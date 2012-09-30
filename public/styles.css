@@ -32,11 +32,11 @@ div {
 }
 
 #content {
-  background-image: url("images/day.jpg");
+  background-image: url("images/day.jpg?1");
   background-repeat: no-repeat;
   margin-left: auto;
   margin-right: auto;
-  width: 1152px;
+  width: 1024px;
   height: 100%;
 }
 
