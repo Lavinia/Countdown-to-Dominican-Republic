@@ -64,7 +64,7 @@ a {
 
 #weather-image {
   display: block;
-  margin-left: 486px;
+  margin-left: 485px;
   text-align: center;
 }
 
@@ -86,7 +86,7 @@ a {
 }
 
 #weather-description {
-  margin-top: 6px;
+  margin-top: 8px;
   margin-left: 8px;
   height: 40px;
   float: left;

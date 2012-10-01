@@ -4,7 +4,7 @@ require "haml"
 require "yahoo_weatherman"
 
 ARUBA_WOEID = 23424736
-DEPARTURE_DATE = Time.new(2012, 12, 18)
+DEPARTURE_DATE = Time.new(2012, 12, 18, 9, 0, 0, "+01:00")
 SECONDS_PER_DAY = 86400
 
 get '/' do
