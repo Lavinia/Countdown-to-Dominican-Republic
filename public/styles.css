@@ -77,6 +77,9 @@ a {
 }
 
 #weather-image img {
+  background: snow;
+  border:1px solid gray;
+  border-radius: 16px;
   height: 52px;
   width: 52px;
   vertical-align: middle;
