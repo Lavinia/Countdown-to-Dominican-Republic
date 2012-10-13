@@ -7,3 +7,6 @@ gem "heroku"
 
 gem "haml"
 gem "yahoo_weatherman"
+
+gem "coffee-script"
+gem "therubyracer"

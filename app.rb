@@ -1,7 +1,10 @@
 require "sinatra"
 require "sinatra/reloader" if development?
+require "coffee-script"
+require "v8"
 require "haml"
 require "yahoo_weatherman"
+
 
 ARUBA_WOEID = 23424736
 DEPARTURE_DATE = Time.new(2012, 12, 18, 9, 0, 0, "+01:00")
@@ -19,4 +22,8 @@ get '/' do
   @current_temperature = weather.condition['temp']
   @current_condition = weather.condition['text']
   haml :countdown
+end
+
+get '/countdown.js' do
+  coffee :countdown
 end

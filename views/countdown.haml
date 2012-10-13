@@ -2,10 +2,11 @@
   %head
     %title Countdown to Aruba
     %link(rel="stylesheet" href="styles.css")
+    %script{:type => "text/javascript", :src  => "countdown.js"}
   %body
     #content
       #departure
-        %h1== #{ @days_to_departure }
+        %h1#countdown== #{ @days_to_departure }
         %h2 days to departure
       #weather
         %h3 Current weather on Aruba
