@@ -8,7 +8,8 @@
       #departure
         %h1#countdown== #{ @days_to_departure }
         %h2 days to departure
-      = render(:haml, :weather)
+      #weather
+        = render(:haml, :weather)
     #footer
       %p
         This is a Notingham production by
