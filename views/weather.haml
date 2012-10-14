@@ -1,0 +1,9 @@
+#weather
+  %h3 Current weather on Aruba
+  #current-weather
+    #weather-image
+      %img(src="#{@image}")
+    #weather-description
+      #{@current_temperature}&deg;C
+      %br= @current_condition
+  #high-low== High: #{@forecast_high}&deg;C, Low: #{@forecast_low}&deg;C
