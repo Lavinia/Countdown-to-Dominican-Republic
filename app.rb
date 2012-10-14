@@ -16,8 +16,8 @@ get '/' do
   haml :countdown
 end
 
-get '/countdown.js' do
-  coffee :countdown
+get '/application.js' do
+  coffee :application
 end
 
 get '/weather' do
