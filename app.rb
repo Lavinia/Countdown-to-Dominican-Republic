@@ -7,12 +7,12 @@ require "yahoo_weatherman"
 
 
 ARUBA_WOEID = 23424736
-DEPARTURE_DATE = Time.new(2012, 12, 18, 9, 0, 0, "+01:00")
+DEPARTURE_DATE = Time.new(2012, 12, 18, 0, 0, 0, "+01:00")
 SECONDS_PER_DAY = 86400
 
 get '/' do
   time_remaining = DEPARTURE_DATE - Time.now
-  @days_to_departure = (time_remaining / SECONDS_PER_DAY).to_i
+  @days_to_departure = (time_remaining / SECONDS_PER_DAY).ceil
 
   client = Weatherman::Client.new
   weather = client.lookup_by_woeid ARUBA_WOEID
