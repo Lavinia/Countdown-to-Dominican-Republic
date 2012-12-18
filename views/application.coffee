@@ -10,7 +10,7 @@ HTTP_NOT_MODIFIED = 304
 
 days_to_departure = ->
   today = new Date
-  Math.ceil((DEPARTURE_DATE.getTime() - today.getTime()) / DAY)
+  Math.max(Math.ceil((DEPARTURE_DATE.getTime() - today.getTime()) / DAY), 0)
 
 update_countdown = ->
   document.getElementById("countdown").innerHTML = days_to_departure()

@@ -32,7 +32,7 @@ private
 
 def calculate_days_to_departure
   time_remaining = DEPARTURE_DATE - Time.now
-  @days_to_departure = (time_remaining / SECONDS_PER_DAY).ceil
+  @days_to_departure = [(time_remaining / SECONDS_PER_DAY).ceil, 0].max
 end
 
 def weather_on_aruba
