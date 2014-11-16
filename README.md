@@ -1,4 +1,4 @@
-Countdown-to-Aruba
+Countdown-to-Dominican-Republic
 ==================
 
-Countdown to aruba
+Countdown to Dominican Republic

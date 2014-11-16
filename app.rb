@@ -5,14 +5,14 @@ require "v8"
 require "haml"
 require "yahoo_weatherman"
 
-ARUBA_WOEID = 23424736
-DEPARTURE_DATE = Time.new(2012, 12, 18, 0, 0, 0, "+01:00")
+DESTINATION_WOEID =  2345180
+DEPARTURE_DATE = Time.new(2014, 12, 18, 0, 0, 0, "+01:00")
 SECONDS_PER_DAY = 86400
-ARUBA_TIMEZONE_OFFSET = 4 * 3600
+DESTINATION_TIMEZONE_OFFSET = 4 * 3600
 
 get '/' do
   calculate_days_to_departure
-  weather_on_aruba do |weather|
+  weather_at_destination do |weather|
     fetch_current_weather_info(weather)
     fetch_sun_times(weather)
   end
@@ -24,7 +24,7 @@ get '/application.js' do
 end
 
 get '/weather' do
-  fetch_current_weather_info(weather_on_aruba)
+  fetch_current_weather_info(weather_at_destination)
   haml :weather
 end
 
@@ -35,9 +35,9 @@ def calculate_days_to_departure
   @days_to_departure = [(time_remaining / SECONDS_PER_DAY).ceil, 0].max
 end
 
-def weather_on_aruba
+def weather_at_destination
   client = Weatherman::Client.new
-  weather = client.lookup_by_woeid ARUBA_WOEID
+  weather = client.lookup_by_woeid DESTINATION_WOEID
 
   if block_given?
     yield weather
@@ -64,5 +64,5 @@ def fetch_sun_times(weather)
 end
 
 def local_aruba_to_utc(time)
-  Time.parse("#{time} UTC") + ARUBA_TIMEZONE_OFFSET
+  Time.parse("#{time} UTC") + DESTINATION_TIMEZONE_OFFSET
 end
