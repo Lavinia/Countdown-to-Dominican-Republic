@@ -2,7 +2,7 @@ require "sinatra"
 require "sinatra/reloader" if development?
 require "coffee-script"
 require "v8"
-require "haml"
+require "slim"
 require "yahoo_weatherman"
 
 DESTINATION_WOEID =  2345180
@@ -16,7 +16,7 @@ get '/' do
     fetch_current_weather_info(weather)
     fetch_sun_times(weather)
   end
-  haml :countdown
+  slim :countdown
 end
 
 get '/application.js' do
@@ -25,7 +25,7 @@ end
 
 get '/weather' do
   fetch_current_weather_info(weather_at_destination)
-  haml :weather
+  slim :weather
 end
 
 private

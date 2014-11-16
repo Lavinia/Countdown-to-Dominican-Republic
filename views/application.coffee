@@ -41,6 +41,7 @@ update_background_image = ->
     document.getElementById("content").style.backgroundImage = 'url("images/night.jpg")'
 
 window.onload = ->
+  console.log "catter"
   update_background_image()
   setInterval(update_countdown, DATE_UPDATE_INTERVAL)
   setInterval(update_weather, WEATHER_UPDATE_INTERVAL)
