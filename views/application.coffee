@@ -3,6 +3,7 @@ DEPARTURE_DATE = new Date(Date.UTC(2014, 11, 17, 23))
 DATE_UPDATE_INTERVAL = 30 * 1000
 BACKGROUND_UPDATE_INTERVAL = 60 * 1000
 WEATHER_UPDATE_INTERVAL = 30 * 60 * 1000
+SUN_TIMES_UPDATE_INTERVAL = 30 * 60 * 1000
 
 STATE_COMPLETE = 4
 HTTP_OK = 200
@@ -30,6 +31,23 @@ update_weather = ->
   req.open "GET", "weather", false
   req.send()
 
+update_sun_times = ->
+  req = new XMLHttpRequest()
+
+  req.addEventListener "readystatechange", ->
+    if req.readyState is STATE_COMPLETE
+      if req.status is HTTP_OK
+        sun_times = JSON.parse(req.responseText)
+        window.sun_times.sunset = new Date sun_times.sunset * 1000
+        window.sun_times.sunrise = new Date sun_times.sunrise * 1000
+      else if req.status is HTTP_NOT_MODIFIED
+        # Do nothing, sun times has not changed.
+      else
+        console.log "[#{new Date}] Could not fetch current sun times."
+
+  req.open "GET", "sun_timer", false
+  req.send()
+
 day_time = ->
   now = new Date
   window.sun_times.sunrise.getTime() <= now.getTime() < window.sun_times.sunset.getTime()
@@ -45,4 +63,5 @@ window.onload = ->
   setInterval(update_countdown, DATE_UPDATE_INTERVAL)
   setInterval(update_weather, WEATHER_UPDATE_INTERVAL)
   setInterval(update_background_image, BACKGROUND_UPDATE_INTERVAL)
+  setInterval(update_sun_times, SUN_TIMES_UPDATE_INTERVAL)
 

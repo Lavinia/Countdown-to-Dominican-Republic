@@ -1,5 +1,6 @@
 require "sinatra"
 require "sinatra/reloader" if development?
+require "sinatra/json"
 require "coffee-script"
 require "v8"
 require "slim"
@@ -26,6 +27,11 @@ end
 get '/weather' do
   fetch_current_weather_info(weather_at_destination)
   slim :weather
+end
+
+get '/sun_timer' do
+  fetch_sun_times(weather_at_destination)
+  json :sunrise => @sunrise.to_i, :sunset => @sunset.to_i
 end
 
 private
