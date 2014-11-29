@@ -3,6 +3,7 @@ body {
   padding: 0;
   background-image: url("images/sand.jpg");
   font-family: sans-serif;
+  position: relative;
 }
 
 h1, h2, h3, h4 {
@@ -31,8 +32,21 @@ a {
   text-decoration: none;
 }
 
+#wrapper {
+  margin: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-right: -50%;
+  -ms-transform: rotate(7deg);
+  transform: translate(-50%, -50%);
+  -webkit-transform: translate(-50%, -50%);
+  -moz-transform: translate(-50%, 10%);
+}
+
 #content {
   background-repeat: no-repeat;
+  margin: 0;
   margin-left: auto;
   margin-right: auto;
   width: 1024px;

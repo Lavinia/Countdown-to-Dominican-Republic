@@ -9,15 +9,16 @@ html
         sunset: new Date("#{@sunset.to_i}" * 1000)
       }
   body
-    #content
-      #departure
-        h1#countdown= @days_to_departure
-        h2 days to departure
-      #weather
-        == render(:slim, :weather)
-    #footer
-      p
-        ' This is a Notingham production by
-        a href="https://twitter.com/Lavinia666" @Lavinia666
-        '  and
-        a href="https://twitter.com/DevLCSC" @DevLCSC
+    #wrapper
+      #content
+        #departure
+          h1#countdown= @days_to_departure
+          h2 days to departure
+        #weather
+          == render(:slim, :weather)
+      #footer
+        p
+          ' This is a Notingham production by
+          a href="https://twitter.com/Lavinia666" @Lavinia666
+          '  and
+          a href="https://twitter.com/DevLCSC" @DevLCSC
