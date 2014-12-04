@@ -29,7 +29,7 @@ get '/weather' do
   slim :weather
 end
 
-get '/sun_timer' do
+get '/sun_times' do
   fetch_sun_times(weather_at_destination)
   json :sunrise => @sunrise.to_i, :sunset => @sunset.to_i
 end

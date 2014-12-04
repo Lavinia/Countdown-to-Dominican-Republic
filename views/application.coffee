@@ -16,37 +16,34 @@ days_to_departure = ->
 update_countdown = ->
   document.getElementById("countdown").innerHTML = days_to_departure()
 
-update_weather = ->
+update = (end_point, on_success) ->
   req = new XMLHttpRequest()
 
   req.addEventListener "readystatechange", ->
     if req.readyState is STATE_COMPLETE
       if req.status is HTTP_OK
-        document.getElementById("weather").innerHTML = req.responseText
+        on_success(req.responseText)
       else if req.status is HTTP_NOT_MODIFIED
         # Do nothing, weather not changed.
       else
         console.log "[#{new Date}] Could not fetch current weather."
 
-  req.open "GET", "weather", false
+  req.open "GET", end_point, false
   req.send()
+
+set_weather = (content) ->
+  document.getElementById("weather").innerHTML = content
+
+set_suntimes = (content) ->
+  sun_times = JSON.parse(content)
+  window.sun_times.sunset = new Date sun_times.sunset * 1000
+  window.sun_times.sunrise = new Date sun_times.sunrise * 1000
+
+update_weather = ->
+  update("weather", set_weather)
 
 update_sun_times = ->
-  req = new XMLHttpRequest()
-
-  req.addEventListener "readystatechange", ->
-    if req.readyState is STATE_COMPLETE
-      if req.status is HTTP_OK
-        sun_times = JSON.parse(req.responseText)
-        window.sun_times.sunset = new Date sun_times.sunset * 1000
-        window.sun_times.sunrise = new Date sun_times.sunrise * 1000
-      else if req.status is HTTP_NOT_MODIFIED
-        # Do nothing, sun times has not changed.
-      else
-        console.log "[#{new Date}] Could not fetch current sun times."
-
-  req.open "GET", "sun_timer", false
-  req.send()
+  update("sun_times", set_suntimes)
 
 day_time = ->
   now = new Date
