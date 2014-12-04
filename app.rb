@@ -64,10 +64,10 @@ def fetch_sun_times(weather)
   sun_info = weather.astronomy.map {|e| e}
   local_sunrise = sun_info.first.last
   local_sunset = sun_info.last.last
-  @sunrise = local_aruba_to_utc(local_sunrise)
-  @sunset = local_aruba_to_utc(local_sunset)
+  @sunrise = local_time_to_utc(local_sunrise)
+  @sunset = local_time_to_utc(local_sunset)
 end
 
-def local_aruba_to_utc(time)
+def local_time_to_utc(time)
   Time.parse("#{time} UTC") + DESTINATION_TIMEZONE_OFFSET
 end
